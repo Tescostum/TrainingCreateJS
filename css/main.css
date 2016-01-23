@@ -5,3 +5,24 @@
 #myCanvas {
   border: #333 1px solid;
 }
+
+#controlArea {
+  width: 100%;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  -webkit-flex-direction: row; /* Safari */
+  flex-direction:         row;
+  -webkit-align-items: center; /* Safari */
+  align-items:         center;
+}
+
+#controllUpDownArea {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  -webkit-flex-direction: column; /* Safari */
+  flex-direction:         column;
+}
+
+.controlButton {
+  margin: 0.2em;
+}
