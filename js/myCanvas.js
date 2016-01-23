@@ -23,8 +23,10 @@
     createjs.Ticker.addEventListener("tick", stage);
     
     drawCircle();
-    setLeftButtons();
-    setRightButtons();
+    setLeftButton();
+    setRightButton();
+    setUpButton();
+    setDownButton();
   }
   
   function setResizeCanvasEvent() {
@@ -61,14 +63,24 @@
     stage.update();
   }
   
-  function setLeftButtons() {
+  function setLeftButton() {
       var button = document.getElementById("leftButton");
       button.addEventListener("click", clickLeftButton);
   }
   
-  function setRightButtons() {
+  function setRightButton() {
       var button = document.getElementById("rightButton");
       button.addEventListener("click", clickRightButton);
+  }
+  
+  function setUpButton() {
+      var button = document.getElementById("upButton");
+      button.addEventListener("click", clickUPButton);
+  }
+  
+  function setDownButton() {
+      var button = document.getElementById("downButton");
+      button.addEventListener("click", clickDownButton);
   }
   
   function clickLeftButton(event) {
@@ -79,5 +91,15 @@
   function clickRightButton(event) {
       createjs.Tween.get(circle, { loop: false })
         .to({ x: circle.x + 120 }, 500, createjs.Ease.getPowInOut(4));
+  }
+  
+  function clickUPButton(event) {
+      createjs.Tween.get(circle, { loop: false })
+        .to({ y: circle.y - 50 }, 500, createjs.Ease.getPowInOut(4));
+  }
+  
+  function clickDownButton(event) {
+      createjs.Tween.get(circle, { loop: false })
+        .to({ y: circle.y + 50 }, 500, createjs.Ease.getPowInOut(4));
   }
 })();
